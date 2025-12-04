@@ -1,0 +1,3 @@
+/mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build/CMakeFiles/xvoice_cpp_demo.dir
+/mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build/CMakeFiles/edit_cache.dir
+/mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build/CMakeFiles/rebuild_cache.dir

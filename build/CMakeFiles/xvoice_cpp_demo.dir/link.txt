@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.o -o xvoice_cpp_demo  -lsqlite3 

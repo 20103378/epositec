@@ -1,0 +1,236 @@
+#include "viot_dds_commecial.h"
+#include "viot_shared_commercial.h"
+#include "port_iot_diff_cutgo.h"
+#include <chrono>
+#include <iostream>
+#include <ctime>
+#include <iomanip>
+#include <sstream>
+#include <cstdlib>
+#include <third_party/nlohmann/json.hpp>
+#include <cstring>
+#include <deque>
+#include <thread>
+#include <atomic>
+
+namespace viot {
+namespace dds {
+#include <iostream>
+#include <thread>
+
+inline void LOGD(const std::string& msg, const char* file, int line) {
+    std::cout 
+              << "[ tid=" << std::this_thread::get_id()
+              << ", file=" << file
+              << ", line=" << line
+              << "]->" << msg << std::endl;
+}
+// 用法示例： log_with_location("你的日志内容", __FILE__, __LINE__);
+
+viotDDSCommecial::~viotDDSCommecial() {
+    running = false;
+    if (producer_thread.joinable()) producer_thread.join();
+    if (consumer_thread.joinable()) consumer_thread.join();
+    if (gga_consumer_thread.joinable()) gga_consumer_thread.join();
+}
+
+static std::string make_gga(int count) {
+    // 生成当前UTC时间
+    std::time_t t = std::time(nullptr);
+    std::tm* utc = std::gmtime(&t);
+    std::ostringstream oss;
+    oss << "$GPGGA,";
+    oss << std::setfill('0') << std::setw(2) << utc->tm_hour
+        << std::setw(2) << utc->tm_min
+        << std::setw(2) << utc->tm_sec << ",";
+    // 模拟经纬度
+    oss << "3107.123,N,12128.456,E,";
+        oss << (rand() % 10) << ","; // fix: 随机生产 0-5
+    oss << "08,"; // numsats
+    oss << "0.9,"; // hdop
+    oss << "12.3,M,0.0,M,,*47";
+    // 可加计数或其它字段
+    oss << " // seq=" << count;
+    return oss.str();
+}
+
+void viotDDSCommecial::startProducerThread() {
+    running = true;
+    producer_thread = std::thread([this]{
+
+    nlohmann::json ntrip_info;
+    ntrip_info["serviceCode"] = 0; // 示例服务码
+    viot::utils::ShareData::GetInstance().setNtripInfo(ntrip_info.dump());
+    std::cout << "初始化NTRIP信息: " << viot::utils::ShareData::GetInstance().getNtripInfo() << std::endl;
+
+
+
+
+        int count = 0;
+        bool mower_sent = false;
+        while (running) {
+            // 生产GGA字符串
+            std::string gga = make_gga(count);
+            iot_dds_info_queue.enqueue(gga);
+            // 生产IotComLargeInfoDDS结构体
+            IotComLargeInfoDDS data;
+            if (!mower_sent) {
+                mower_sent = true;
+                // ICIT_NODE_MOWER_INFO，结构体转JSON
+                data.type = ICIT_NODE_MOWER_INFO;
+                struct MowerDataCutGo {
+                    int id;
+                    std::string status;
+                } mower;
+                mower.id = 100 + count;
+                mower.status = "working";
+                nlohmann::json j;
+                j["id"] = mower.id;
+                j["status"] = mower.status;
+                std::string json_str = j.dump();
+                data.len = std::min((unsigned long)json_str.size(), sizeof(data.data));
+                std::memcpy(data.data, json_str.data(), data.len);
+            } else {
+                // ICIT_GGA_INFO，原样填充
+                data.type = ICIT_GGA_INFO;
+                int content_len = std::snprintf(data.data, sizeof(data.data), "Sample data %d", count);
+                data.len = content_len > 0 ? content_len : 0;
+            }
+            dds_info_queue.enqueue(data);
+            ++count;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+    });
+}
+
+bool viotDDSCommecial::waitDequeueGGA(std::string& out) {
+    while (running) {
+        if (iot_dds_info_queue.try_dequeue(out)) return true;
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    }
+    return false;
+}
+bool app_map_start_info(const nlohmann::json &data, mower::port::iot::MowerDataCutGo &dataToMower, int &need_switch_account, int &serviceCode){    // 模拟解析逻辑
+    if(data.contains("isNew") && data["isNew"].is_boolean()){
+        if(data["isNew"].get<bool>()){
+            need_switch_account = false;
+            std::cout<< "不需要切换 = " << need_switch_account << std::endl;
+        }else{
+            if(data.contains("nrtk") && data["nrtk"].is_number()){
+                int nrtk_value = data["nrtk"].get<int>();
+                if(nrtk_value != serviceCode){
+                    need_switch_account = true;
+                    serviceCode = nrtk_value;
+                    LOGD(std::string("需要切换 :")+std::to_string(need_switch_account), __FUNCTION__, __LINE__);
+                }else{
+                    need_switch_account = false;
+                    LOGD(std::string("不需要切换 :")+std::to_string(need_switch_account), __FUNCTION__, __LINE__);
+                }
+            }
+        }
+        return true;
+    }
+    return false;
+}
+
+void viotDDSCommecial::startConsumerThread() {
+    consumer_thread = std::thread([this]{
+        while (running) {
+            IotComLargeInfoDDS data;
+            if (dds_info_queue.try_dequeue(data)) {
+                switch (data.type) {
+                        case ICIT_GGA_INFO:{
+                            // std::cout << "[CONSUMER] GGA数据, len=" << data.len << ", data=" << std::string(data.data, data.len) << std::endl;
+                        break;
+                        }
+                    case ICIT_NODE_MOWER_INFO:{
+                         int need_switch_account = false;
+                         int serviceCode = viot::utils::ShareData::GetInstance().getNtripServiceCode();
+                         std::cout << "当前NTRIP服务码=" << serviceCode << std::endl;
+
+
+                            nlohmann::json parse_root;
+                            nlohmann::json temp;
+                            temp["isNew"] = false; // 示例服务码
+                            temp["nrtk"] =  1; // 示例服务码
+                            parse_root["data"] = temp;
+
+
+
+
+                         mower::port::iot::MowerDataCutGo dataToMower;
+                         memset(&dataToMower, 0, sizeof(dataToMower));
+                         if(app_map_start_info(parse_root["data"],dataToMower,need_switch_account,serviceCode)){
+                            if(need_switch_account){
+                                 LOGD(std::string("需要切换服务商账号")+std::to_string(serviceCode), __FUNCTION__, __LINE__);
+                                 //释放掉以前的nrtk账号
+                                viot::utils::ShareData::GetInstance().setGgaQuality(0);//造数据
+                                //申请新账号
+                                // 直接开线程处理，无需入队
+                                std::thread([data]{
+                                    std::cout << "\033[32m[MOWER线程] 等待高质量定位数据..." << std::endl;
+                                    viot::utils::ShareData::GetInstance().waitForFix45();
+                                    std::cout << "\033[32m[MOWER线程] 处理-MOWER数据, len=" << data.len << ", data=" << std::string(data.data, data.len) << "\033[0m" << std::endl;
+                                }).detach();
+                            }else {
+                                LOGD(std::string("不需要切换服务商账号")+std::to_string(serviceCode), __FUNCTION__, __LINE__);
+                            }
+    
+                         }else{
+                             std::cout << "解析MOWER数据失败" << std::endl;
+                         }
+                        break;
+                    }
+                    default:
+                    {
+                        std::cout << "[CONSUMER] 未知类型, type=" << data.type << std::endl;
+                        break;
+                    }
+                }
+            } else {
+                std::this_thread::sleep_for(std::chrono::milliseconds(10));
+            }
+        }
+    });
+}
+
+void viotDDSCommecial::startGGAConsumerThread() {
+    gga_consumer_thread = std::thread([this]{
+        while (running) {
+            std::string gga;
+            if (iot_dds_info_queue.try_dequeue(gga)) {
+                // 解析fix字段
+                int fix = -1;
+                int comma_count = 0;
+                for (size_t i = 0; i < gga.size(); ++i) {
+                    if (gga[i] == ',') {
+                        ++comma_count;
+                        if (comma_count == 6) {
+                            size_t start = i + 1;
+                            size_t end = gga.find(',', start);
+                            if (end != std::string::npos) {
+                                std::string fix_str = gga.substr(start, end - start);
+                                try {
+                                    fix = std::stoi(fix_str);
+                                } catch (...) {
+                                    fix = -1;
+                                }
+                            }
+                            break;
+                        }
+                    }
+                }
+                viot::utils::ShareData::GetInstance().setGgaQuality(fix);
+                    std::cout << "[GGA CONSUMER] GGA数据: " << gga << std::endl;
+                if (fix == 4 || fix == 5) {
+                        std::cout << "[GGA CONSUMER] fix字段为 " << fix << "，为高质量定位！" << std::endl;
+                }
+            } else {
+                std::this_thread::sleep_for(std::chrono::milliseconds(10));
+            }
+        }
+    });
+}
+
+} // namespace dds
+} // namespace viot
