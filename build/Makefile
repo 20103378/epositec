@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo
+CMAKE_SOURCE_DIR = /mnt/e/epositec/epositec/xvoice_cpp_demo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build
+CMAKE_BINARY_DIR = /mnt/e/epositec/epositec/xvoice_cpp_demo/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build/CMakeFiles /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles /mnt/e/epositec/epositec/xvoice_cpp_demo/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,29 +129,53 @@ xvoice_cpp_demo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/build
 .PHONY : xvoice_cpp_demo/fast
 
-src/commercial/sqlite_manager.o: src/commercial/sqlite_manager.cpp.o
-.PHONY : src/commercial/sqlite_manager.o
+src/commercial/viot_data_center.o: src/commercial/viot_data_center.cpp.o
+.PHONY : src/commercial/viot_data_center.o
 
 # target to build an object file
-src/commercial/sqlite_manager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.o
-.PHONY : src/commercial/sqlite_manager.cpp.o
+src/commercial/viot_data_center.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o
+.PHONY : src/commercial/viot_data_center.cpp.o
 
-src/commercial/sqlite_manager.i: src/commercial/sqlite_manager.cpp.i
-.PHONY : src/commercial/sqlite_manager.i
+src/commercial/viot_data_center.i: src/commercial/viot_data_center.cpp.i
+.PHONY : src/commercial/viot_data_center.i
 
 # target to preprocess a source file
-src/commercial/sqlite_manager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.i
-.PHONY : src/commercial/sqlite_manager.cpp.i
+src/commercial/viot_data_center.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.i
+.PHONY : src/commercial/viot_data_center.cpp.i
 
-src/commercial/sqlite_manager.s: src/commercial/sqlite_manager.cpp.s
-.PHONY : src/commercial/sqlite_manager.s
+src/commercial/viot_data_center.s: src/commercial/viot_data_center.cpp.s
+.PHONY : src/commercial/viot_data_center.s
 
 # target to generate assembly for a file
-src/commercial/sqlite_manager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.s
-.PHONY : src/commercial/sqlite_manager.cpp.s
+src/commercial/viot_data_center.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.s
+.PHONY : src/commercial/viot_data_center.cpp.s
+
+src/commercial/viot_db_commercial.o: src/commercial/viot_db_commercial.cpp.o
+.PHONY : src/commercial/viot_db_commercial.o
+
+# target to build an object file
+src/commercial/viot_db_commercial.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.o
+.PHONY : src/commercial/viot_db_commercial.cpp.o
+
+src/commercial/viot_db_commercial.i: src/commercial/viot_db_commercial.cpp.i
+.PHONY : src/commercial/viot_db_commercial.i
+
+# target to preprocess a source file
+src/commercial/viot_db_commercial.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.i
+.PHONY : src/commercial/viot_db_commercial.cpp.i
+
+src/commercial/viot_db_commercial.s: src/commercial/viot_db_commercial.cpp.s
+.PHONY : src/commercial/viot_db_commercial.s
+
+# target to generate assembly for a file
+src/commercial/viot_db_commercial.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.s
+.PHONY : src/commercial/viot_db_commercial.cpp.s
 
 src/commercial/viot_dds_commecial.o: src/commercial/viot_dds_commecial.cpp.o
 .PHONY : src/commercial/viot_dds_commecial.o
@@ -176,6 +200,78 @@ src/commercial/viot_dds_commecial.s: src/commercial/viot_dds_commecial.cpp.s
 src/commercial/viot_dds_commecial.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.s
 .PHONY : src/commercial/viot_dds_commecial.cpp.s
+
+src/commercial/viot_event_commercial.o: src/commercial/viot_event_commercial.cpp.o
+.PHONY : src/commercial/viot_event_commercial.o
+
+# target to build an object file
+src/commercial/viot_event_commercial.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.o
+.PHONY : src/commercial/viot_event_commercial.cpp.o
+
+src/commercial/viot_event_commercial.i: src/commercial/viot_event_commercial.cpp.i
+.PHONY : src/commercial/viot_event_commercial.i
+
+# target to preprocess a source file
+src/commercial/viot_event_commercial.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.i
+.PHONY : src/commercial/viot_event_commercial.cpp.i
+
+src/commercial/viot_event_commercial.s: src/commercial/viot_event_commercial.cpp.s
+.PHONY : src/commercial/viot_event_commercial.s
+
+# target to generate assembly for a file
+src/commercial/viot_event_commercial.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.s
+.PHONY : src/commercial/viot_event_commercial.cpp.s
+
+src/commercial/viot_http_commercial.o: src/commercial/viot_http_commercial.cpp.o
+.PHONY : src/commercial/viot_http_commercial.o
+
+# target to build an object file
+src/commercial/viot_http_commercial.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.o
+.PHONY : src/commercial/viot_http_commercial.cpp.o
+
+src/commercial/viot_http_commercial.i: src/commercial/viot_http_commercial.cpp.i
+.PHONY : src/commercial/viot_http_commercial.i
+
+# target to preprocess a source file
+src/commercial/viot_http_commercial.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.i
+.PHONY : src/commercial/viot_http_commercial.cpp.i
+
+src/commercial/viot_http_commercial.s: src/commercial/viot_http_commercial.cpp.s
+.PHONY : src/commercial/viot_http_commercial.s
+
+# target to generate assembly for a file
+src/commercial/viot_http_commercial.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.s
+.PHONY : src/commercial/viot_http_commercial.cpp.s
+
+src/commercial/viot_ntrip_commercial.o: src/commercial/viot_ntrip_commercial.cpp.o
+.PHONY : src/commercial/viot_ntrip_commercial.o
+
+# target to build an object file
+src/commercial/viot_ntrip_commercial.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o
+.PHONY : src/commercial/viot_ntrip_commercial.cpp.o
+
+src/commercial/viot_ntrip_commercial.i: src/commercial/viot_ntrip_commercial.cpp.i
+.PHONY : src/commercial/viot_ntrip_commercial.i
+
+# target to preprocess a source file
+src/commercial/viot_ntrip_commercial.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.i
+.PHONY : src/commercial/viot_ntrip_commercial.cpp.i
+
+src/commercial/viot_ntrip_commercial.s: src/commercial/viot_ntrip_commercial.cpp.s
+.PHONY : src/commercial/viot_ntrip_commercial.s
+
+# target to generate assembly for a file
+src/commercial/viot_ntrip_commercial.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.s
+.PHONY : src/commercial/viot_ntrip_commercial.cpp.s
 
 src/commercial/viot_shared_commercial.o: src/commercial/viot_shared_commercial.cpp.o
 .PHONY : src/commercial/viot_shared_commercial.o
@@ -225,6 +321,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/viot_sqlite_wrapper.o: src/viot_sqlite_wrapper.cpp.o
+.PHONY : src/viot_sqlite_wrapper.o
+
+# target to build an object file
+src/viot_sqlite_wrapper.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.o
+.PHONY : src/viot_sqlite_wrapper.cpp.o
+
+src/viot_sqlite_wrapper.i: src/viot_sqlite_wrapper.cpp.i
+.PHONY : src/viot_sqlite_wrapper.i
+
+# target to preprocess a source file
+src/viot_sqlite_wrapper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.i
+.PHONY : src/viot_sqlite_wrapper.cpp.i
+
+src/viot_sqlite_wrapper.s: src/viot_sqlite_wrapper.cpp.s
+.PHONY : src/viot_sqlite_wrapper.s
+
+# target to generate assembly for a file
+src/viot_sqlite_wrapper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.s
+.PHONY : src/viot_sqlite_wrapper.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -234,18 +354,33 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... xvoice_cpp_demo"
-	@echo "... src/commercial/sqlite_manager.o"
-	@echo "... src/commercial/sqlite_manager.i"
-	@echo "... src/commercial/sqlite_manager.s"
+	@echo "... src/commercial/viot_data_center.o"
+	@echo "... src/commercial/viot_data_center.i"
+	@echo "... src/commercial/viot_data_center.s"
+	@echo "... src/commercial/viot_db_commercial.o"
+	@echo "... src/commercial/viot_db_commercial.i"
+	@echo "... src/commercial/viot_db_commercial.s"
 	@echo "... src/commercial/viot_dds_commecial.o"
 	@echo "... src/commercial/viot_dds_commecial.i"
 	@echo "... src/commercial/viot_dds_commecial.s"
+	@echo "... src/commercial/viot_event_commercial.o"
+	@echo "... src/commercial/viot_event_commercial.i"
+	@echo "... src/commercial/viot_event_commercial.s"
+	@echo "... src/commercial/viot_http_commercial.o"
+	@echo "... src/commercial/viot_http_commercial.i"
+	@echo "... src/commercial/viot_http_commercial.s"
+	@echo "... src/commercial/viot_ntrip_commercial.o"
+	@echo "... src/commercial/viot_ntrip_commercial.i"
+	@echo "... src/commercial/viot_ntrip_commercial.s"
 	@echo "... src/commercial/viot_shared_commercial.o"
 	@echo "... src/commercial/viot_shared_commercial.i"
 	@echo "... src/commercial/viot_shared_commercial.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/viot_sqlite_wrapper.o"
+	@echo "... src/viot_sqlite_wrapper.i"
+	@echo "... src/viot_sqlite_wrapper.s"
 .PHONY : help
 
 

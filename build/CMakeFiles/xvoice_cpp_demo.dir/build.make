@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo
+CMAKE_SOURCE_DIR = /mnt/e/epositec/epositec/xvoice_cpp_demo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build
+CMAKE_BINARY_DIR = /mnt/e/epositec/epositec/xvoice_cpp_demo/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/xvoice_cpp_demo.dir/depend.make
@@ -72,65 +72,140 @@ include CMakeFiles/xvoice_cpp_demo.dir/flags.make
 CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/flags.make
 CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o -MF CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o.d -o CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o -c /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o -MF CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o.d -o CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o -c /mnt/e/epositec/epositec/xvoice_cpp_demo/src/main.cpp
 
 CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/src/main.cpp > CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/epositec/epositec/xvoice_cpp_demo/src/main.cpp > CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.i
 
 CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/src/main.cpp -o CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/epositec/epositec/xvoice_cpp_demo/src/main.cpp -o CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.s
 
 CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/flags.make
 CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o: ../src/commercial/viot_dds_commecial.cpp
 CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o -MF CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o.d -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o -c /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/src/commercial/viot_dds_commecial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o -MF CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o.d -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o -c /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_dds_commecial.cpp
 
 CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/src/commercial/viot_dds_commecial.cpp > CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_dds_commecial.cpp > CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.i
 
 CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/src/commercial/viot_dds_commecial.cpp -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_dds_commecial.cpp -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.s
 
 CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/flags.make
 CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o: ../src/commercial/viot_shared_commercial.cpp
 CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o -MF CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o.d -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o -c /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/src/commercial/viot_shared_commercial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o -MF CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o.d -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o -c /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_shared_commercial.cpp
 
 CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/src/commercial/viot_shared_commercial.cpp > CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_shared_commercial.cpp > CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.i
 
 CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/src/commercial/viot_shared_commercial.cpp -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_shared_commercial.cpp -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.s
 
-CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/flags.make
-CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.o: ../src/commercial/sqlite_manager.cpp
-CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.o -MF CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.o.d -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.o -c /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/src/commercial/sqlite_manager.cpp
+CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/flags.make
+CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.o: ../src/viot_sqlite_wrapper.cpp
+CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.o -MF CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.o.d -o CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.o -c /mnt/e/epositec/epositec/xvoice_cpp_demo/src/viot_sqlite_wrapper.cpp
 
-CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/src/commercial/sqlite_manager.cpp > CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.i
+CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/epositec/epositec/xvoice_cpp_demo/src/viot_sqlite_wrapper.cpp > CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.i
 
-CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/src/commercial/sqlite_manager.cpp -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.s
+CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/epositec/epositec/xvoice_cpp_demo/src/viot_sqlite_wrapper.cpp -o CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.s
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/flags.make
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.o: ../src/commercial/viot_db_commercial.cpp
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.o -MF CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.o.d -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.o -c /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_db_commercial.cpp
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_db_commercial.cpp > CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.i
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_db_commercial.cpp -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.s
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/flags.make
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.o: ../src/commercial/viot_event_commercial.cpp
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.o -MF CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.o.d -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.o -c /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_event_commercial.cpp
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_event_commercial.cpp > CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.i
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_event_commercial.cpp -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.s
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/flags.make
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.o: ../src/commercial/viot_http_commercial.cpp
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.o -MF CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.o.d -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.o -c /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_http_commercial.cpp
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_http_commercial.cpp > CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.i
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_http_commercial.cpp -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.s
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/flags.make
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o: ../src/commercial/viot_ntrip_commercial.cpp
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o -MF CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o.d -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o -c /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_ntrip_commercial.cpp
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_ntrip_commercial.cpp > CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.i
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_ntrip_commercial.cpp -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.s
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/flags.make
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o: ../src/commercial/viot_data_center.cpp
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o -MF CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o.d -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o -c /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_data_center.cpp
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_data_center.cpp > CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.i
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_data_center.cpp -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.s
 
 # Object files for target xvoice_cpp_demo
 xvoice_cpp_demo_OBJECTS = \
 "CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o" \
 "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o" \
 "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o" \
-"CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.o"
+"CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.o" \
+"CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.o" \
+"CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.o" \
+"CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.o" \
+"CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o" \
+"CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o"
 
 # External object files for target xvoice_cpp_demo
 xvoice_cpp_demo_EXTERNAL_OBJECTS =
@@ -138,10 +213,15 @@ xvoice_cpp_demo_EXTERNAL_OBJECTS =
 xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o
 xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o
 xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o
-xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/src/commercial/sqlite_manager.cpp.o
+xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/src/viot_sqlite_wrapper.cpp.o
+xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.o
+xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.o
+xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.o
+xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o
+xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o
 xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/build.make
 xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable xvoice_cpp_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable xvoice_cpp_demo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/xvoice_cpp_demo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -153,6 +233,6 @@ CMakeFiles/xvoice_cpp_demo.dir/clean:
 .PHONY : CMakeFiles/xvoice_cpp_demo.dir/clean
 
 CMakeFiles/xvoice_cpp_demo.dir/depend:
-	cd /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build/CMakeFiles/xvoice_cpp_demo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/e/epositec/epositec/xvoice_cpp_demo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/e/epositec/epositec/xvoice_cpp_demo /mnt/e/epositec/epositec/xvoice_cpp_demo /mnt/e/epositec/epositec/xvoice_cpp_demo/build /mnt/e/epositec/epositec/xvoice_cpp_demo/build /mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles/xvoice_cpp_demo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/xvoice_cpp_demo.dir/depend
 

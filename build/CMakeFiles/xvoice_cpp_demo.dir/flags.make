@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/include -I/mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/include/interface -I/mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/include/third_party/moodycamel -I/mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/include/third_party/nlohmann
+CXX_INCLUDES = -I/mnt/e/epositec/epositec/xvoice_cpp_demo/include -I/mnt/e/epositec/epositec/xvoice_cpp_demo/include/interface -I/mnt/e/epositec/epositec/xvoice_cpp_demo/include/third_party/moodycamel -I/mnt/e/epositec/epositec/xvoice_cpp_demo/include/third_party/nlohmann
 
 CXX_FLAGS = -std=c++17
 

@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo
+# Install script for directory: /mnt/e/epositec/epositec/xvoice_cpp_demo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/e/kuaizhu/src/xvoice/xvoice_cpp_demo/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/e/epositec/epositec/xvoice_cpp_demo/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

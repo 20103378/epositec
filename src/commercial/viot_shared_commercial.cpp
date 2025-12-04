@@ -1,5 +1,9 @@
-#include "../include/viot_shared_commercial.h"
+#include "viot_shared_commercial.h"
 #include <third_party/nlohmann/json.hpp>
+#include "viot_http_commercial.h"
+
+
+viot::http::IOThttp v_http;
 namespace viot {
 namespace utils {
 
@@ -16,7 +20,7 @@ void ShareData::setGgaQuality(int val) {
        gga_quality_cv.notify_all();
     }
 }
-void ShareData::waitForFix45() {
+void ShareData::waitForGgaQuality() {
     std::unique_lock<std::mutex> lock(gga_quality_mtx);
     gga_quality_cv.wait(lock, [this]{ return gga_quality == 4 || gga_quality == 5; });
 }
