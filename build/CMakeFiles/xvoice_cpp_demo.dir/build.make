@@ -195,6 +195,34 @@ CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_data_center.cpp -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.s
 
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/flags.make
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.o: ../src/commercial/viot_app_inout_commercial.cpp
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.o -MF CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.o.d -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.o -c /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_app_inout_commercial.cpp
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_app_inout_commercial.cpp > CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.i
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_app_inout_commercial.cpp -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.s
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/flags.make
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.o: ../src/commercial/viot_logic_commercial.cpp
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.o: CMakeFiles/xvoice_cpp_demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.o -MF CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.o.d -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.o -c /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_logic_commercial.cpp
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_logic_commercial.cpp > CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.i
+
+CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_logic_commercial.cpp -o CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.s
+
 # Object files for target xvoice_cpp_demo
 xvoice_cpp_demo_OBJECTS = \
 "CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o" \
@@ -205,7 +233,9 @@ xvoice_cpp_demo_OBJECTS = \
 "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.o" \
 "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.o" \
 "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o" \
-"CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o"
+"CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o" \
+"CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.o" \
+"CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.o"
 
 # External object files for target xvoice_cpp_demo
 xvoice_cpp_demo_EXTERNAL_OBJECTS =
@@ -219,9 +249,11 @@ xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commer
 xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.o
 xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o
 xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o
+xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.o
+xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.o
 xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/build.make
 xvoice_cpp_demo: CMakeFiles/xvoice_cpp_demo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable xvoice_cpp_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/e/epositec/epositec/xvoice_cpp_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable xvoice_cpp_demo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/xvoice_cpp_demo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

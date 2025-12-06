@@ -15,7 +15,7 @@ namespace viot
             VIOT_LOG_INFO("自动切换到当前最优的供应商NTRIP账号");
             std::string rspbuff;
             double latitude, longitude;
-            viot::utils::ShareData::GetInstance().getMowerPose(latitude, longitude);
+            viot::utils::SharedData::GetInstance()->getMowerPose(latitude, longitude);
             VIOT_PrintSaveLOG("gas_data json %.8f, %.8f", latitude, longitude);
             std::string rtk_url = NRTK_INFO_REQ;
             std::string g_rtk_info = "/thing/rtk/v1/allocate";
@@ -35,16 +35,16 @@ namespace viot
                     rsp_json = nlohmann::json::parse(rspbuff);
                     rsp_data = rsp_json["data"];
                     std::string expiresAt = std::to_string(rsp_data["expiresAt"].get<long>());
-                    viot::db::viotDbCommercial::setNtripExpiresAt(expiresAt);
-                    viot::utils::ShareData::GetInstance().setNtripExpiresTime(rsp_data["expiresAt"].get<long>());
+                    viot::db::viotDBCommercial::setNtripExpiresAt(expiresAt);
+                    viot::utils::SharedData::GetInstance()->setNtripExpiresTime(rsp_data["expiresAt"].get<long>());
 
                     ntrip_info["url"] = rsp_data["endpoint"].get<std::string>();
                     ntrip_info["user"] = rsp_data["userName"].get<std::string>();
                     ntrip_info["password"] = rsp_data["password"].get<std::string>();
                     ntrip_info["serviceCode"] = rsp_data["serviceCode"].get<int>();
-                    viot::utils::ShareData::GetInstance().setNtripInfo(ntrip_info.dump());
-                    viot::db::viotDbCommercial::setNtripInfo(ntrip_info.dump());
-                    robot::utils::DataCenter::GetInstance().set<std::string>("viot/pub/ntrip_info", ntrip_info.dump());
+                    viot::utils::SharedData::GetInstance()->setNtripInfo(ntrip_info.dump());
+                    viot::db::viotDBCommercial::setNtripInfo(ntrip_info.dump());
+                    robot::utils::DataCenter::GetInstance()->set<std::string>("viot/pub/ntrip_info", ntrip_info.dump());
                 }
                 catch (const nlohmann::json::exception &e)
                 {
@@ -60,7 +60,7 @@ namespace viot
             viot::http::IOThttp v_http;
             if (v_http.httpsReq(NRTK_RELEASE_URL, "", rspbuff, "", viot::http::IOThttp::HttpMethod::GET))
             {
-                viot::utils::ShareData::GetInstance().setGgaQuality(0);
+                viot::utils::SharedData::GetInstance()->setGgaQuality(0);
                 VIOT_LOG_INFO("NTRIP账号释放请求已发送");
                 return true;
             }
@@ -76,7 +76,7 @@ namespace viot
             VIOT_PrintSaveLOG("需要切换服务商账号:%d", serviceCode);
             std::string rspbuff;
             double latitude, longitude;
-            viot::utils::ShareData::GetInstance().getMowerPose(latitude, longitude);
+            viot::utils::SharedData::GetInstance()->getMowerPose(latitude, longitude);
             VIOT_PrintSaveLOG("gas_data json %.8f, %.8f", latitude, longitude);
             std::string rtk_url = NRTK_INFO_REQ;
             std::string g_rtk_info = "/thing/rtk/v1/allocate";
@@ -109,17 +109,17 @@ namespace viot
 
                         long expiresAtLong = rsp_data["expiresAt"].get<long>();
                         std::string expiresAt = std::to_string(expiresAtLong);
-                        viot::db::viotDbCommercial::setNtripExpiresAt(expiresAt);
-                        viot::utils::ShareData::GetInstance().setNtripExpiresTime(expiresAtLong);
+                        viot::db::viotDBCommercial::setNtripExpiresAt(expiresAt);
+                        viot::utils::SharedData::GetInstance()->setNtripExpiresTime(expiresAtLong);
 
                         nlohmann::json ntrip_info;
                         ntrip_info["url"] = rsp_data["endpoint"].get<std::string>();
                         ntrip_info["user"] = rsp_data["userName"].get<std::string>();
                         ntrip_info["password"] = rsp_data["password"].get<std::string>();
                         ntrip_info["serviceCode"] = rsp_data["serviceCode"].get<int>();
-                        viot::utils::ShareData::GetInstance().setNtripInfo(ntrip_info.dump());
-                        viot::db::viotDbCommercial::setNtripInfo(ntrip_info.dump());
-                        robot::utils::DataCenter::GetInstance().set<std::string>("viot/pub/ntrip_info", ntrip_info.dump());
+                        viot::utils::SharedData::GetInstance()->setNtripInfo(ntrip_info.dump());
+                        viot::db::viotDBCommercial::setNtripInfo(ntrip_info.dump());
+                        robot::utils::DataCenter::GetInstance()->set<std::string>("viot/pub/ntrip_info", ntrip_info.dump());
 
                         VIOT_LOG_INFO("NTRIP信息切换成功: %s", ntrip_info.dump().c_str());
                         return true;

@@ -4,14 +4,15 @@
 
 
 viot::http::IOThttp v_http;
+viot::dds::ViotDDSCommecial viot_dds_shared;
 namespace viot {
 namespace utils {
 
-int ShareData::getGgaQuality() const {
+int SharedData::getGgaQuality() const {
     std::lock_guard<std::mutex> lock(gga_quality_mtx);
     return gga_quality;
 }
-void ShareData::setGgaQuality(int val) {
+void SharedData::setGgaQuality(int val) {
     {
         std::lock_guard<std::mutex> lock(gga_quality_mtx);
         gga_quality = val;
@@ -20,11 +21,11 @@ void ShareData::setGgaQuality(int val) {
        gga_quality_cv.notify_all();
     }
 }
-void ShareData::waitForGgaQuality() {
+void SharedData::waitForGgaQuality() {
     std::unique_lock<std::mutex> lock(gga_quality_mtx);
     gga_quality_cv.wait(lock, [this]{ return gga_quality == 4 || gga_quality == 5; });
 }
- int ShareData::getNtripServiceCode() const {
+ int SharedData::getNtripServiceCode() const {
     int service_code = -1;
     if (!ntripInfo.empty() && ntripInfo[0] == '{') {
         nlohmann::json parse_root = nlohmann::json::parse(this->ntripInfo);

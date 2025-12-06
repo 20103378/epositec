@@ -23,7 +23,7 @@ namespace viot
     namespace dds
     {
 
-        viotDDSCommecial::~viotDDSCommecial()
+        ViotDDSCommecial::~ViotDDSCommecial()
         {
             running = false;
             if (producer_thread.joinable())
@@ -55,7 +55,7 @@ namespace viot
             return oss.str();
         }
 
-        void viotDDSCommecial::startProducerThread()
+        void ViotDDSCommecial::startProducerThread()
         {
             running = true;
             producer_thread = std::thread([this]
@@ -63,11 +63,11 @@ namespace viot
 
     nlohmann::json ntrip_info;
     ntrip_info["serviceCode"] = 0; // 示例服务码
-    viot::utils::ShareData::GetInstance().setNtripInfo(ntrip_info.dump());
-    viot::db::viotDbCommercial::setNtripInfo(ntrip_info.dump());
-    std::cout << "初始化NTRIP信息: " << viot::utils::ShareData::GetInstance().getNtripInfo() << std::endl;
+    viot::utils::SharedData::GetInstance()->setNtripInfo(ntrip_info.dump());
+    viot::db::viotDBCommercial::setNtripInfo(ntrip_info.dump());
+    std::cout << "初始化NTRIP信息: " << viot::utils::SharedData::GetInstance()->getNtripInfo() << std::endl;
     std::string ntrip_info_db;
-    viot::db::viotDbCommercial::getNtripInfo(ntrip_info_db);
+    viot::db::viotDBCommercial::getNtripInfo(ntrip_info_db);
     std::cout << "从数据库读取NTRIP信息: " << ntrip_info_db << std::endl;
     viot_event_start(); // 启动事件处理线程
 
@@ -82,24 +82,22 @@ namespace viot
             IotComLargeInfoDDS data;
             if (!mower_sent) {
                 mower_sent = true;
-                // ICIT_NODE_MOWER_INFO，结构体转JSON
                 data.type = ICIT_NODE_MOWER_INFO;
-                struct MowerDataCutGo {
-                    int id;
-                    std::string status;
-                } mower;
-                mower.id = 100 + count;
-                mower.status = "working";
-                nlohmann::json j;
-                j["id"] = mower.id;
-                j["status"] = mower.status;
-                std::string json_str = j.dump();
-                data.len = std::min((unsigned long)json_str.size(), sizeof(data.data));
-                std::memcpy(data.data, json_str.data(), data.len);
+                mower::port::iot::MowerDataCutGo mower_info_tmp;
+                memset(&mower_info_tmp, 0, sizeof(mower::port::iot::MowerDataCutGo));
+                mower_info_tmp.head.msgId = count;
+                mower_info_tmp.head.infoId = count;
+                mower_info_tmp.head.cmd = mower::port::iot::ComCmdTypeCutGO::CMD_TYPE_LCD_MAPID;
+                mower_info_tmp.head.msgType = mower::port::iot::ComMessageCutGoType::CUTGO_DATA_TYPE_UI_ASYNC;
+                mower_info_tmp.head.ackFlag = false;
+                mower_info_tmp.head.msgSender = mower::port::iot::ComMsgfrom::MSG_FROM_HMI;
+                mower_info_tmp.head.msgReceiver = 1;
+                int content_len = sizeof(mower::port::iot::MowerDataCutGo);
+                std::memcpy(data.buf, &mower_info_tmp, content_len);
+                data.len = content_len;
             } else {
-                // ICIT_GGA_INFO，原样填充
-                data.type = ICIT_GGA_INFO;
-                int content_len = std::snprintf(data.data, sizeof(data.data), "Sample data %d", count);
+                data.type = ICIT_NODE_NTRIP;
+                int content_len = std::snprintf(data.buf, sizeof(data.buf), "Sample data %d", count);
                 data.len = content_len > 0 ? content_len : 0;
             }
             dds_info_queue.enqueue(data);
@@ -107,8 +105,42 @@ namespace viot
             std::this_thread::sleep_for(std::chrono::seconds(1));
         } });
         }
-
-        bool viotDDSCommecial::waitDequeueGGA(std::string &out)
+        void ViotDDSCommecial::viot_dds_publish(char *src, uint32_t len, DDSIotComInfoType type)
+        {
+            VIOT_LOG_DEBUG("viot_dds_publish, type=%d, len=%u", type, len);
+            
+            if (type == ICIT_VIOT_APP_COMMAND) {
+                mower::port::iot::MowerDataCutGo* mower_data = (mower::port::iot::MowerDataCutGo*)src;
+                nlohmann::json j;
+                j["head"]["msgId"] = mower_data->head.msgId;
+                j["head"]["infoId"] = mower_data->head.infoId;
+                j["head"]["cmd"] = static_cast<int>(mower_data->head.cmd);
+                j["head"]["msgType"] = static_cast<int>(mower_data->head.msgType);
+                j["head"]["ackFlag"] = mower_data->head.ackFlag;
+                j["head"]["msgSender"] = static_cast<int>(mower_data->head.msgSender);
+                j["head"]["msgReceiver"] = mower_data->head.msgReceiver;
+                VIOT_LOG_DEBUG("发布MOWER_INFO内容: %s", j.dump().c_str());
+            } else {
+                std::string content(src, std::min(len, (uint32_t)100)); // 限制打印长度
+                VIOT_LOG_DEBUG("发布内容: %s", content.c_str());
+            }
+        }
+        void ViotDDSCommecial::push_data_queue(char *src, uint32_t len, DDSIotComInfoType type)
+        {
+            std::array<char, 8 * 1024> buffer;
+            if (len > buffer.size())
+            {
+                VIOT_LOG_ERROR("DDS数据过大,len=%u", len);
+                return;
+            }
+            std::memcpy(buffer.data(), src, len);
+            IotComLargeInfoDDS self_data;
+            self_data.type = type;
+            self_data.len = len;
+            std::memcpy(self_data.buf, buffer.data(), len);
+            dds_info_queue.enqueue(self_data);
+        }
+        bool ViotDDSCommecial::waitDequeueGGA(std::string &out)
         {
             while (running)
             {
@@ -118,112 +150,18 @@ namespace viot
             }
             return false;
         }
-        bool app_map_start_info(const nlohmann::json &data, mower::port::iot::MowerDataCutGo &dataToMower, int &need_switch_account, int &serviceCode)
-        { // 模拟解析逻辑
-            if (data.contains("isNew") && data["isNew"].is_boolean())
+        bool ViotDDSCommecial::waitDequeueDDS(IotComLargeInfoDDS &out)
+        {
+            while (running)
             {
-                if (data["isNew"].get<bool>())
-                {
-                    need_switch_account = false;
-                    std::cout << "不需要切换 = " << need_switch_account << std::endl;
-                }
-                else
-                {
-                    if (data.contains("nrtk") && data["nrtk"].is_number())
-                    {
-                        int nrtk_value = data["nrtk"].get<int>();
-                        if (nrtk_value != serviceCode)
-                        {
-                            need_switch_account = true;
-                            serviceCode = nrtk_value;
-                            VIOT_PrintSaveLOG("需要切换 :%d", need_switch_account);
-                        }
-                        else
-                        {
-                            need_switch_account = false;
-                            VIOT_PrintSaveLOG("不需要切换 :%d", need_switch_account);
-                        }
-                    }
-                }
-                return true;
+                if (dds_info_queue.try_dequeue(out))
+                    return true;
+                std::this_thread::sleep_for(std::chrono::milliseconds(10));
             }
             return false;
         }
 
-        void viotDDSCommecial::startConsumerThread()
-        {
-            consumer_thread = std::thread([this]
-                                          {
-        while (running) {
-            IotComLargeInfoDDS data;
-            if (dds_info_queue.try_dequeue(data)) {
-                switch (data.type) {
-                        case ICIT_GGA_INFO:{
-                            // std::cout << "[CONSUMER] GGA数据, len=" << data.len << ", data=" << std::string(data.data, data.len) << std::endl;
-                        break;
-                        }
-                    case ICIT_NODE_MOWER_INFO:{
-                         int need_switch_account = false;
-                         int serviceCode = viot::utils::ShareData::GetInstance().getNtripServiceCode();
-                         VIOT_PrintSaveLOG("当前NTRIP服务码=%d", serviceCode);
-
-                            nlohmann::json parse_root;
-                            nlohmann::json temp;
-                            temp["isNew"] = false; // 示例服务码
-                            temp["nrtk"] =  1; // 示例服务码
-                            parse_root["data"] = temp;
-
-
-
-
-                         mower::port::iot::MowerDataCutGo dataToMower;
-                         memset(&dataToMower, 0, sizeof(dataToMower));
-                         if(app_map_start_info(parse_root["data"],dataToMower,need_switch_account,serviceCode)){
-                            if(need_switch_account){
-                                 bool isReleased = viot::ntrip::release_ntrip_account();
-                                 if(!isReleased){
-                                     VIOT_PrintSaveLOG("释放服务商账号失败:%d", viot::utils::ShareData::GetInstance().getNtripServiceCode());
-                                     VIOT_PrintSaveLOG("TODO: 放弃建图:%d", serviceCode);
-                                     continue;
-                                 }
-                                bool ischange = viot::ntrip::change_ntrip_account(serviceCode);
-                                if(!ischange){
-                                    VIOT_PrintSaveLOG("切换服务商账号失败:%d", serviceCode);
-                                    VIOT_PrintSaveLOG("TODO: 放弃建图:%d", serviceCode);
-                                    viot::utils::ShareData::GetInstance().setNtripInfo("{}");
-                                    viot::db::viotDbCommercial::setNtripInfo("{}");
-                                    viot::utils::ShareData::GetInstance().setNtripExpiresTime(0);
-                                    viot::db::viotDbCommercial::setNtripExpiresAt("0");
-                                    viot_event_set_status(VIOT_EVENT_NEED_NTRIP_INFO); // 触发获取NTRIP信息事件
-                                    continue;
-                                }
-                                std::thread([data, serviceCode]{
-                                    VIOT_PrintSaveLOG("等待高质量定位数据...");
-                                    viot::utils::ShareData::GetInstance().waitForGgaQuality();
-                                    VIOT_PrintSaveLOG("获得高质量定位数据,TODO: 继续建图:%d", serviceCode);
-                                }).detach();
-                            }else {
-                                VIOT_PrintSaveLOG("不需要切换服务商账号,TODO: 继续建图::%d", serviceCode);
-                            }
-    
-                         }else{
-                             VIOT_PrintSaveLOG("解析MOWER数据失败");
-                         }
-                        break;
-                    }
-                    default:
-                    {
-                        VIOT_PrintSaveLOG("未知DDS数据类型: %d", data.type);
-                        break;
-                    }
-                }
-            } else {
-                std::this_thread::sleep_for(std::chrono::milliseconds(10));
-            }
-        } });
-        }
-
-        void viotDDSCommecial::startGGAConsumerThread()
+        void ViotDDSCommecial::startGGAConsumerThread()
         {
             gga_consumer_thread = std::thread([this]
                                               {
@@ -251,7 +189,7 @@ namespace viot
                         }
                     }
                 }
-                viot::utils::ShareData::GetInstance().setGgaQuality(fix);
+                viot::utils::SharedData::GetInstance()->setGgaQuality(fix);
                     std::cout << "[GGA CONSUMER] GGA数据: " << gga << std::endl;
                 if (fix == 4 || fix == 5) {
                         std::cout << "[GGA CONSUMER] fix字段为 " << fix << "，为高质量定位！" << std::endl;

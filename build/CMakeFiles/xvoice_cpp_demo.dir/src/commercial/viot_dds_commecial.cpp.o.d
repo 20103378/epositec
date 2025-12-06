@@ -178,10 +178,10 @@ CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o: \
  /usr/include/c++/11/bits/locale_facets.tcc \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
- /usr/include/c++/11/bits/istream.tcc \
+ /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/cstring \
+ /usr/include/string.h /usr/include/strings.h \
  /mnt/e/epositec/epositec/xvoice_cpp_demo/include/port_iot_diff_cutgo.h \
- /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
- /mnt/e/epositec/epositec/xvoice_cpp_demo/include/viot_db_commercial.h \
+ /mnt/e/epositec/epositec/xvoice_cpp_demo/include/viot_http_commercial.h \
  /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
  /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
@@ -198,6 +198,7 @@ CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o: \
  /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/bits/stl_algo.h \
  /usr/include/c++/11/bits/algorithmfwd.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
+ /mnt/e/epositec/epositec/xvoice_cpp_demo/include/viot_db_commercial.h \
  /mnt/e/epositec/epositec/xvoice_cpp_demo/include/viot_log.h \
  /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
  /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/unistd.h \

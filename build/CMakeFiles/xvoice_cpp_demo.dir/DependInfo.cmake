@@ -8,11 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_app_inout_commercial.cpp" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.o" "gcc" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.o.d"
   "/mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_data_center.cpp" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o" "gcc" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o.d"
   "/mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_db_commercial.cpp" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.o" "gcc" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.o.d"
   "/mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_dds_commecial.cpp" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o" "gcc" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_dds_commecial.cpp.o.d"
   "/mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_event_commercial.cpp" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.o" "gcc" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.o.d"
   "/mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_http_commercial.cpp" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.o" "gcc" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.o.d"
+  "/mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_logic_commercial.cpp" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.o" "gcc" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.o.d"
   "/mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_ntrip_commercial.cpp" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o" "gcc" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o.d"
   "/mnt/e/epositec/epositec/xvoice_cpp_demo/src/commercial/viot_shared_commercial.cpp" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o" "gcc" "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o.d"
   "/mnt/e/epositec/epositec/xvoice_cpp_demo/src/main.cpp" "CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o" "gcc" "CMakeFiles/xvoice_cpp_demo.dir/src/main.cpp.o.d"

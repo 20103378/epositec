@@ -5,25 +5,25 @@
 namespace viot {
 namespace db {
 
-viotDbCommercial::viotDbCommercial() {
+viotDBCommercial::viotDBCommercial() {
     // 构造函数实现
 }
 
-viotDbCommercial::~viotDbCommercial() {
+viotDBCommercial::~viotDBCommercial() {
     // 析构函数实现
 }
-int viotDbCommercial::setNtripExpiresAt(const std::string &NtripExpiresAt){
-    return viot::utils::SqliteWrapper::GetInstance().WriteValue(DB_LABEL_NTRIP_EXPIRES_TIME, NtripExpiresAt);
+int viotDBCommercial::setNtripExpiresAt(const std::string &NtripExpiresAt){
+    return viot::utils::SqliteWrapper::GetInstance()->WriteValue(DB_LABEL_NTRIP_EXPIRES_TIME, NtripExpiresAt);
 }
- int viotDbCommercial::getNtripExpiresAt(std::string &NtripExpiresAt){
-    return viot::utils::SqliteWrapper::GetInstance().ReadValue(DB_LABEL_NTRIP_EXPIRES_TIME, NtripExpiresAt);
+ int viotDBCommercial::getNtripExpiresAt(std::string &NtripExpiresAt){
+    return viot::utils::SqliteWrapper::GetInstance()->ReadValue(DB_LABEL_NTRIP_EXPIRES_TIME, NtripExpiresAt);
  }
-int viotDbCommercial::setNtripInfo(const std::string &NtripInfo) {
-   return viot::utils::SqliteWrapper::GetInstance().WriteValue(DB_LABEL_NTRIP_INFO, NtripInfo);
+int viotDBCommercial::setNtripInfo(const std::string &NtripInfo) {
+   return viot::utils::SqliteWrapper::GetInstance()->WriteValue(DB_LABEL_NTRIP_INFO, NtripInfo);
 }
 
-int viotDbCommercial::getNtripInfo(std::string &NtripInfo) {
-   return viot::utils::SqliteWrapper::GetInstance().ReadValue(DB_LABEL_NTRIP_INFO, NtripInfo);
+int viotDBCommercial::getNtripInfo(std::string &NtripInfo) {
+   return viot::utils::SqliteWrapper::GetInstance()->ReadValue(DB_LABEL_NTRIP_INFO, NtripInfo);
 }
 
 } // namespace db

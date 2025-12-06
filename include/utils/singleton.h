@@ -15,8 +15,8 @@ public:
         static T instance_;
         return instance_;
     }
-    // GetInstance为instance的别名。
-    static T& GetInstance() { return instance(); }
+    // GetInstance返回指针
+    static T* GetInstance() { return &instance(); }
 protected:
     Singleton() = default;
     ~Singleton() = default;

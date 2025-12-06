@@ -129,6 +129,30 @@ xvoice_cpp_demo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/build
 .PHONY : xvoice_cpp_demo/fast
 
+src/commercial/viot_app_inout_commercial.o: src/commercial/viot_app_inout_commercial.cpp.o
+.PHONY : src/commercial/viot_app_inout_commercial.o
+
+# target to build an object file
+src/commercial/viot_app_inout_commercial.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.o
+.PHONY : src/commercial/viot_app_inout_commercial.cpp.o
+
+src/commercial/viot_app_inout_commercial.i: src/commercial/viot_app_inout_commercial.cpp.i
+.PHONY : src/commercial/viot_app_inout_commercial.i
+
+# target to preprocess a source file
+src/commercial/viot_app_inout_commercial.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.i
+.PHONY : src/commercial/viot_app_inout_commercial.cpp.i
+
+src/commercial/viot_app_inout_commercial.s: src/commercial/viot_app_inout_commercial.cpp.s
+.PHONY : src/commercial/viot_app_inout_commercial.s
+
+# target to generate assembly for a file
+src/commercial/viot_app_inout_commercial.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.s
+.PHONY : src/commercial/viot_app_inout_commercial.cpp.s
+
 src/commercial/viot_data_center.o: src/commercial/viot_data_center.cpp.o
 .PHONY : src/commercial/viot_data_center.o
 
@@ -249,6 +273,30 @@ src/commercial/viot_http_commercial.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.s
 .PHONY : src/commercial/viot_http_commercial.cpp.s
 
+src/commercial/viot_logic_commercial.o: src/commercial/viot_logic_commercial.cpp.o
+.PHONY : src/commercial/viot_logic_commercial.o
+
+# target to build an object file
+src/commercial/viot_logic_commercial.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.o
+.PHONY : src/commercial/viot_logic_commercial.cpp.o
+
+src/commercial/viot_logic_commercial.i: src/commercial/viot_logic_commercial.cpp.i
+.PHONY : src/commercial/viot_logic_commercial.i
+
+# target to preprocess a source file
+src/commercial/viot_logic_commercial.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.i
+.PHONY : src/commercial/viot_logic_commercial.cpp.i
+
+src/commercial/viot_logic_commercial.s: src/commercial/viot_logic_commercial.cpp.s
+.PHONY : src/commercial/viot_logic_commercial.s
+
+# target to generate assembly for a file
+src/commercial/viot_logic_commercial.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xvoice_cpp_demo.dir/build.make CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.s
+.PHONY : src/commercial/viot_logic_commercial.cpp.s
+
 src/commercial/viot_ntrip_commercial.o: src/commercial/viot_ntrip_commercial.cpp.o
 .PHONY : src/commercial/viot_ntrip_commercial.o
 
@@ -354,6 +402,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... xvoice_cpp_demo"
+	@echo "... src/commercial/viot_app_inout_commercial.o"
+	@echo "... src/commercial/viot_app_inout_commercial.i"
+	@echo "... src/commercial/viot_app_inout_commercial.s"
 	@echo "... src/commercial/viot_data_center.o"
 	@echo "... src/commercial/viot_data_center.i"
 	@echo "... src/commercial/viot_data_center.s"
@@ -369,6 +420,9 @@ help:
 	@echo "... src/commercial/viot_http_commercial.o"
 	@echo "... src/commercial/viot_http_commercial.i"
 	@echo "... src/commercial/viot_http_commercial.s"
+	@echo "... src/commercial/viot_logic_commercial.o"
+	@echo "... src/commercial/viot_logic_commercial.i"
+	@echo "... src/commercial/viot_logic_commercial.s"
 	@echo "... src/commercial/viot_ntrip_commercial.o"
 	@echo "... src/commercial/viot_ntrip_commercial.i"
 	@echo "... src/commercial/viot_ntrip_commercial.s"

@@ -13,6 +13,8 @@ add_executable(xvoice_cpp_demo
     src/commercial/viot_http_commercial.cpp
     src/commercial/viot_ntrip_commercial.cpp
     src/commercial/viot_data_center.cpp
+    src/commercial/viot_app_inout_commercial.cpp
+    src/commercial/viot_logic_commercial.cpp
 )
 target_include_directories(xvoice_cpp_demo PRIVATE include include/interface include/third_party/moodycamel include/third_party/nlohmann)
 # 直接链接sqlite3库，不使用find_package

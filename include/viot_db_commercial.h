@@ -9,11 +9,11 @@
 namespace viot {
     namespace db
     {
-        class viotDbCommercial
+        class viotDBCommercial
         {
         public:
-            viotDbCommercial();
-            ~viotDbCommercial();
+            viotDBCommercial();
+            ~viotDBCommercial();
         public:
         static int setNtripExpiresAt(const std::string &NtripExpiresAt);
         static int getNtripExpiresAt(std::string &NtripExpiresAt);

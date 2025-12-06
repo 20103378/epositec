@@ -191,7 +191,16 @@ CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o: \
  /usr/include/c++/11/bits/locale_facets.tcc \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
- /usr/include/c++/11/bits/istream.tcc \
+ /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/cstring \
+ /usr/include/string.h /usr/include/strings.h \
+ /mnt/e/epositec/epositec/xvoice_cpp_demo/include/port_iot_diff_cutgo.h \
+ /mnt/e/epositec/epositec/xvoice_cpp_demo/include/third_party/moodycamel/blockingconcurrentqueue.h \
+ /usr/include/c++/11/queue /usr/include/c++/11/deque \
+ /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
+ /usr/include/c++/11/bits/stl_queue.h /usr/include/c++/11/thread \
+ /usr/include/c++/11/bits/std_thread.h \
+ /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/atomic \
+ /mnt/e/epositec/epositec/xvoice_cpp_demo/include/viot_dds_commecial.h \
  /mnt/e/epositec/epositec/xvoice_cpp_demo/include/viot_db_commercial.h \
  /mnt/e/epositec/epositec/xvoice_cpp_demo/include/viot_log.h \
  /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
@@ -250,7 +259,6 @@ CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o: \
  /usr/include/c++/11/bits/mask_array.h \
  /usr/include/c++/11/bits/indirect_array.h /usr/include/c++/11/version \
  /usr/include/c++/11/cassert /usr/include/assert.h \
- /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
  /usr/include/c++/11/filesystem /usr/include/c++/11/bits/fs_fwd.h \
  /usr/include/c++/11/bits/fs_path.h /usr/include/c++/11/locale \
  /usr/include/c++/11/bits/locale_facets_nonio.h \

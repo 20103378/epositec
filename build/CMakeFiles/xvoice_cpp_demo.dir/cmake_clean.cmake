@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.o"
+  "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_app_inout_commercial.cpp.o.d"
   "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o"
   "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_data_center.cpp.o.d"
   "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_db_commercial.cpp.o"
@@ -9,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_event_commercial.cpp.o.d"
   "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.o"
   "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_http_commercial.cpp.o.d"
+  "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.o"
+  "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_logic_commercial.cpp.o.d"
   "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o"
   "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_ntrip_commercial.cpp.o.d"
   "CMakeFiles/xvoice_cpp_demo.dir/src/commercial/viot_shared_commercial.cpp.o"
